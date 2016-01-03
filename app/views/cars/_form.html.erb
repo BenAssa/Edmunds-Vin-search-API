@@ -1,0 +1,16 @@
+<%= form_for(@car) do |f| %>
+
+
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :Class %><br />
+    <%= f.text_field :Class %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
