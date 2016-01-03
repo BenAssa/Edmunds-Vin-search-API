@@ -1,15 +1,37 @@
 <%= form_for(@car) do |f| %>
 
-
   <div class="field">
     <%= f.label :Name %><br />
     <%= f.text_field :Name %>
   </div>
   <div class="field">
-    <%= f.label :Class %><br />
-    <%= f.text_field :Class %>
+    <%= f.label :Year %><br />
+    <%= f.text_field :Year %>
   </div>
-
+  <div class="field">
+    <%= f.label :Make %><br />
+    <%= f.text_field :Make %>
+  </div>
+  <div class="field">
+    <%= f.label :AvgConsumerRating %><br />
+    <%= f.text_field :AvgConsumerRating %>
+  </div>
+  <div class="field">
+    <%= f.label :ReviewerSummary %><br />
+    <%= f.text_field :ReviewerSummary %>
+  </div>
+  <div class="field">
+    <%= f.label :MPGHighWay %><br />
+    <%= f.text_field :MPGHighWay %>
+  </div>
+ <div class="field">
+    <%= f.label :MPGCity %><br />
+    <%= f.text_field :MPGCity %>
+  </div>
+ <div class="field">
+    <%= f.label :EngineType %><br />
+    <%= f.text_field :EngineType %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

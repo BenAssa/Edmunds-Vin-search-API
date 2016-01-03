@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @car.Name %>
@@ -7,18 +6,21 @@
 
 <p>
   <b>Class:</b>
-  <%= @car.Class %>
+  <%= @car.Year %>
 </p>
 
 <p>
   <b>References:</b>
-  <%= @car.references %>
+  <%= @car.Make %>
 </p>
 
 <p>
   <b>Description:</b>
-  <%= @car.Description %>
+  <%= @car.AvgConsumerRating %>
 </p>
-
+<p>
+  <b>Description:</b>
+  <%= @car.ReviewerSummary %>
+</p>
 
 <%= link_to 'Back', car_path %>

@@ -14,10 +14,11 @@
 <% @cars.each do |skill| %>
   <tr>
     <td><%= skill.Name %></td>
-    <td><%= skill.Class %></td>
-    <td><%= skill.references %></td>
-    <td><%= skill.Description %></td>
-    <td><%= link_to 'Show', 'jkkkk' %></td>
+    <td><%= skill.Make %></td>
+    <td><%= skill.ReviewerSummary %></td>
+    <td><%= skill.AvgConsumerRating %></td>
+    <td><%= skill.MPGCity %></td>
+    <td><%= link_to 'Show', '/'+skill.vin %></td>
   </tr>
 <% end %>
 </table>
