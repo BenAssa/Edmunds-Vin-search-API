@@ -5,11 +5,12 @@ class Car
   }
  require 'open-uri'  
  def initialize (vin='honda')
-	 api_key=''
+	 api_key=Rails.application.secrets.edmunds_api_key
+	 puts "http://api.edmunds.com/api/vehicle/v2/styles/200434856?view=full&fmt=json&api_key="+api_key
 	 self.vin=vin
  	 #I prefer to use names over nice names, and don't expect any problems with the tech used
 	if (vin=='honda')
- 		basicDetails=JSON.parse(open("https://api.edmunds.com/api/vehicle/v2/styles/200434856?view=full&fmt=json&api_key="+api_key).read)
+ 		basicDetails=JSON.parse(open("http://api.edmunds.com/api/vehicle/v2/styles/200434856?view=full&fmt=json&api_key="+api_key).read)
 		styleID='200434856'
 	else
  		basicDetails=JSON.parse(open("http://api.edmunds.com/api/vehicle/v2/vins/"+vin.to_s+"?fmt=json&api_key="+api_key).read)
@@ -36,7 +37,7 @@ begin
 	begin
 
 
-	profReview=JSON.parse( open("https://api.edmunds.com/api/vehicle/v2/styles/"+styleID.to_s+"/grade?fmt=json&api_key="+api_key).read)
+	profReview=JSON.parse( open("http://api.edmunds.com/api/vehicle/v2/styles/"+styleID.to_s+"/grade?fmt=json&api_key="+api_key).read)
 	if (profReview!=nil)
 		self.ReviewerSummary =profReview['summary']
 	end
@@ -45,7 +46,7 @@ rescue Exception
 end	
 	begin
 
-	customerReview=JSON.parse(open("https://api.edmunds.com/api/vehiclereviews/v2/styles/"+styleID.to_s+"?sortby=created%3ADESC&pagenum=1&pagesize=5&fmt=json&api_key="+api_key).read)
+	customerReview=JSON.parse(open("http://api.edmunds.com/api/vehiclereviews/v2/styles/"+styleID.to_s+"?sortby=created%3ADESC&pagenum=1&pagesize=5&fmt=json&api_key="+api_key).read)
 	if (customerReview!=nil)
 		self.AvgConsumerRating=customerReview["averageRating"]
 	end
