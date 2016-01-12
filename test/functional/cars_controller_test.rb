@@ -3,7 +3,7 @@ require 'test_helper'
 class CarsControllerTest < ActionController::TestCase
  
 
-  test "shouldbe succesful" do
+  test "should be succesful" do
   	get(:show, {'id' => "1GNDM19W41B138351"}    )	  
   	assert_response :success
   end
