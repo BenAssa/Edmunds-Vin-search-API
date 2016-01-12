@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 gem 'rails', '4.2.5'
 gem 'tzinfo-data'
+gem 'rails-perftest' 
+gem 'ruby-prof'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git
 # Use unicorn as the web server
